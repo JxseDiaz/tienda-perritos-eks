@@ -7,6 +7,8 @@ services:
     container_name: tienda-db
     ports:
       - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
     networks:
       - tienda-net
     healthcheck:
@@ -48,3 +50,6 @@ services:
 networks:
   tienda-net:
     driver: bridge
+
+volumes:
+  db_data:
